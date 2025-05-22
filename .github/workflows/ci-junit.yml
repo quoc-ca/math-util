@@ -20,14 +20,20 @@ jobs:
       - name: Set up JDK 24
         uses: actions/setup-java@v3
         with:
-          java-version: '24'  # Sử dụng JDK 24, kiểm tra hỗ trợ trên tài liệu actions/setup-java
+          java-version: '24'
           distribution: 'temurin'
+
+      - name: Verify JDK version
+        run: java -version
 
       - name: Build project with Ant
         run: ant -noinput -buildfile build.xml
 
+      - name: Check if jar file exists
+        run: ls -la dist/ || echo "dist/ directory not found"
+
       - name: Distribute jar-war file
-        run: mkdir staging && cp dist/*.jar staging || echo "No jar file found"
+        run: mkdir staging && cp dist/*.jar staging || echo "No jar file found in dist/"
 
       - name: Make hyperlink to jar-war file
         uses: actions/upload-artifact@v3
