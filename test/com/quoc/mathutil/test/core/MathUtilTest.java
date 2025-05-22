@@ -44,7 +44,7 @@ public class MathUtilTest {
         org.junit.Assert.assertEquals(1, MathUtil.getFactorial(1)); //muốn 1! == 1
         org.junit.Assert.assertEquals(2, MathUtil.getFactorial(2)); //muốn 2! == 2
         org.junit.Assert.assertEquals(6, MathUtil.getFactorial(3)); //muốn 3! == 6
-        org.junit.Assert.assertEquals(24, MathUtil.getFactorial(4)); //muốn 4! == 24
+        org.junit.Assert.assertEquals(240, MathUtil.getFactorial(4)); //muốn 4! == 24
 
     }
 
